@@ -1,0 +1,60 @@
+.rodape {
+    background-color: var(--cor-tercearia);
+}
+
+.logo-rodape {
+    height: 5em;
+}
+
+.secoes {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+.secao {
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    color: var(--cor-branco);
+}
+
+#embedded-map-display img {
+    max-width: none !important;
+    background: none !important;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.mapa{
+    height: 20em;
+    width: 100%;
+}
+
+.tel-email {
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+
+.tel-email:hover {
+    color: var(--cor-secundaria);
+}
+
+.direitos {
+    color: var(--cor-branco);
+}
+
+@media (min-width: 992px) {
+    .secoes {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 5rem;
+    }
+
+    .mapa{
+        height: 20em;
+        width: 20em;
+    }
+}
