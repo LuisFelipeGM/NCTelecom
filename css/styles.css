@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root { 
+    --cor-primaria: #1D1364;
+    --cor-secundaria: #FF9900;
+    --cor-tercearia: #A27B5C;
+    --cor-hover: #3F4E4F;
+    --cor-branco: #ffffff;
+
+    --fonte-primaria: "Inter", sans-serif;
+}
+
+.navbar {
+    background-color: var(--cor-primaria);
+}
+
+.logo {
+    height: 6em;
+}
+
+.nav-link {
+    color: var(--cor-branco);
+}
+
+.ativo {
+    color: var(--cor-secundaria);
+}
+
+.botao {
+    background-color: var(--cor-secundaria);
+    border-radius: 75px;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-primaria);
+    font-weight: 700;
+}
+
+.botao:hover {
+    border-width: 2px;
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    cursor: poi;
+}
+
+.navbar-toggler {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
+}
+
+.bi-list {
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+}
