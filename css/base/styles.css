@@ -11,3 +11,7 @@
 
     --fonte-primaria: "Inter", sans-serif;
 }
+
+body {
+    background-color: var(--cor-tercearia);
+}
