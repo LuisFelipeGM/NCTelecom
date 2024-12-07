@@ -58,3 +58,19 @@ body {
 .icon {
     width: 20%;
 }
+
+@media (max-width: 992px) {
+    .botao-contratar {
+        font-weight: 500;
+        border-radius: 10px;
+        font-size: 0.925rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .botao-contratar {
+        font-weight: 500;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+}
