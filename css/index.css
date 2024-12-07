@@ -16,3 +16,45 @@ body {
 .carousel-caption p {
     font-weight: 300;
 }
+
+.planos {
+    padding: 3rem 0;
+    background-color: transparent;
+    background-image: linear-gradient(100deg, var(--cor-primaria) 0%, var(--cor-secundaria) 90%);
+}
+
+.subtitulo {
+    font-size: 1rem;
+    color: var(--cor-branco);
+}
+
+.titulo-secao-card {
+    font-size: 3rem;
+    color: var(--cor-branco);
+}
+
+.beneficios {
+    color: var(--cor-primaria);
+    font-weight: 500
+}
+
+.botao-contratar {
+    background-color: var(--cor-primaria);
+    border-radius: 75px;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+    font-weight: 700;
+    width: 50%;
+}
+
+.botao-contratar:hover {
+    border-width: 2px;
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    cursor: pointer;
+}
+
+.icon {
+    width: 20%;
+}
