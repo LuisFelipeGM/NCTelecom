@@ -19,19 +19,19 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg" aria-label="Eleventh navbar example">
+        <nav class="navbar navbar-expand-lg fixed-top" aria-label="Eleventh navbar example">
             <div class="container">
 
                 <img class="logo" src="./imgs/logo-ncsatmaisveloz-sem-branco.png" alt="logo-ncsatmaisveloz">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
+                    data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="">
                         <i class="bi bi-list"></i>
                     </span>
                 </button>
 
-                <div class="collapse navbar-collapse d-lg-flex align-items-center" id="navbarsExample09">
+                <div class="collapse navbar-collapse d-lg-flex align-items-center" id="navbars">
                     <ul class="navbar-nav flex-grow-1 justify-content-center gap-lg-4 gap-md-2 align-items-center">
                         <li class="nav-item">
                             <a class="nav-link fs-4 ativo" aria-current="page" href="#">Início</a>
@@ -55,7 +55,68 @@
         </nav>
     </header>
 
-    <main></main>
+    <main>
+
+    </section class="carrosel">
+      <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="w-100 img-fluid d-md-none" src="./imgs/mobile/banner-1-mobile.jpg"
+              alt="Mulher de camisa branca olhando para frente sorrindo mexendo no computador">
+            <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./imgs/tablet/banner-1-tablet.jpg"
+              alt="Mulher de camisa branca olhando para frente sorrindo mexendo no computador">
+            <img class="w-100 img-fluid d-none d-xl-block" src="./imgs/desktop/banner-1-desktop.jpg"
+              alt="Mulher de camisa branca olhando para frente sorrindo mexendo no computador">
+              <div class="carousel-caption">
+                <h5 class="fs-1">+ ESTABILIDADE</h5>
+                <p class="fs-4">Desfrute da estabilidade da fibra óptica. Ideal para streaming, jogos e trabalho, sem interrupções!</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img class="w-100 img-fluid d-md-none" src="./imgs/mobile/banner-2-mobile.jpg"
+              alt="Homem de camisa azul no quintal olhando para o notebook e sorrindo">
+            <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./imgs/tablet/banner-2-tablet.jpg"
+              alt="Homem de camisa azul no quintal olhando para o notebook e sorrindo">
+            <img class="w-100 img-fluid d-none d-xl-block" src="./imgs/desktop/banner-2-desktop.jpg"
+              alt="Homem de camisa azul no quintal olhando para o notebook e sorrindo">
+            <div class="carousel-caption">
+              <h5 class="fs-1">+ VELOCIDADE</h5>
+              <p class="fs-4">Aproveite o máximo da internet com quem você mais ama!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="w-100 img-fluid d-md-none" src="./imgs/mobile/banner-3-mobile.jpg"
+              alt="Mãe de camisa branca abraçada com a filha de camisa cinza deitadas no sofá olhando o celular que a mãe está segurando">
+            <img class="w-100 img-fluid d-none d-md-block d-xl-none" src="./imgs/tablet/banner-3-tablet.jpg"
+              alt="Mãe de camisa branca abraçada com a filha de camisa cinza deitadas no sofá olhando o celular que a mãe está segurando">
+            <img class="w-100 img-fluid d-none d-xl-block" src="./imgs/desktop/banner-3-desktop.jpg"
+              alt="Mãe de camisa branca abraçada com a filha de camisa cinza deitadas no sofá olhando o celular que a mãe está segurando">
+            <div class="carousel-caption">
+              <h5 class="fs-1">COMPARTILHE MOMENTOS</h5>
+              <p class="fs-4">Conexão rápida e estável para toda a família curtir cada instante juntos!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    <section>
+        
+    </main>
 
     <footer class="rodape">
         <div class="d-flex justify-content-center pt-4 pb-4">
