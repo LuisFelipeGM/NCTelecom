@@ -28,6 +28,10 @@ body {
     color: var(--cor-branco);
 }
 
+.sombra {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.8);
+}
+
 .titulo-secao-card {
     font-size: 3rem;
     color: var(--cor-branco);
@@ -63,7 +67,17 @@ body {
     font-size: 1.5rem;
 }
 
+@media (max-width: 1200px) {
+    body {
+        padding-top: 5.9rem;
+    }
+}
+
 @media (max-width: 992px) {
+    body {
+        padding-top: 5rem;
+    }
+
     .botao-contratar {
         font-weight: 500;
         border-radius: 10px;
