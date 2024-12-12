@@ -15,3 +15,7 @@
 body {
     background-color: var(--cor-tercearia);
 }
+
+.negrito {
+    font-weight: 700;
+}
