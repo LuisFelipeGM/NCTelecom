@@ -44,7 +44,7 @@ body {
     color: var(--cor-secundaria);
     font-family: var(--fonte-primaria);
     font-weight: 700;
-    width: 50%;
+    width: 70%;
 }
 
 .botao-contratar:hover {
@@ -55,8 +55,12 @@ body {
     cursor: pointer;
 }
 
-.icon {
-    width: 20%;
+.bi-tv {
+    font-size: 1.7rem;
+}
+
+.tv {
+    font-size: 1.5rem;
 }
 
 @media (max-width: 992px) {
