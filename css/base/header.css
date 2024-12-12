@@ -8,10 +8,11 @@
 
 .nav-link {
     color: var(--cor-branco);
+    font-size: 1.5rem;
 }
 
 .ativo {
-    color: var(--cor-secundaria);
+    color: var(--cor-secundaria) !important;
 }
 
 .botao {
@@ -20,6 +21,7 @@
     color: var(--cor-primaria);
     font-family: var(--fonte-primaria);
     font-weight: 700;
+    width: 100%;
 }
 
 .botao:hover {
@@ -41,4 +43,32 @@
 .nav-link:hover {
     color: var(--cor-secundaria);
     font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+    .nav-link {
+        color: var(--cor-branco);
+        font-size: 1.20rem;
+    }
+
+    .botao {
+        font-size: 1.25rem;
+        width: 80%;
+    }
+
+    .logo {
+        height: 4em;
+    }
+}
+
+@media (max-width: 991px) {
+    .nav-link {
+        color: var(--cor-branco);
+        font-size: 1.5rem;
+    }
+
+    .botao {
+        font-size: 1.5rem;
+        width: 100%;
+    }
 }
