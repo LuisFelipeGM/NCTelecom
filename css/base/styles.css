@@ -34,3 +34,10 @@ body {
         padding-top: 5rem;
     }
 }
+
+/* Remove as setas de incremento e decremento no Chrome, Edge e Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
