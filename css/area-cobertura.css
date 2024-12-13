@@ -45,6 +45,12 @@
     width: 10rem;
 }
 
+.mensagem-erro {
+    color: var(--cor-quaternaria);
+    display: block;
+    width: 20rem;
+}
+
 .botao-enviar {
     background-color: var(--cor-secundaria);
     border-radius: 75px;
@@ -62,6 +68,12 @@
     color: var(--cor-secundaria);
     cursor: pointer;
 }
+
+.botao-enviar:disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+  }
 
 @media (max-width: 992px) {
     .cobertura {

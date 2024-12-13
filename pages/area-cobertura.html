@@ -12,8 +12,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
     defer></script>
-  <script src="./../js/script.js" defer></script>
-  <script src="./../js/form-area.js" defer></script>
+    <script src="./../js/script.js" defer></script>
+    <script src="./../js/vanilla-masker.js" defer></script>
+    <script src="./../js/form-area.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./../css/area-cobertura.css">
 </head>
@@ -78,32 +79,36 @@
         </div>
 
         <div class="formulario">
-          <form action="" class="" method="post" novalidate>
+          <form action="" class="needs-validated" method="post" novalidate data-formulario>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control campo" id="floatingInput" placeholder="" maxlength="60" required>
+              <input type="text" class="form-control campo" id="nome" placeholder="" minlength="3" maxlength="60" required>
               <label for="floatingInput">Nome</label>
+              <span class="mensagem-erro"></span>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control campo" id="floatingInput" placeholder="" maxlength="100" required>
+              <input type="email" class="form-control campo" id="email" placeholder="" minlength="4" maxlength="100" required>
               <label for="floatingInput">E-mail</label>
+              <span class="mensagem-erro"></span>
             </div>
             <div class="form-floating mb-3">
-              <input type="tel" class="form-control campo" id="floatingInput" placeholder="" maxlength="11" required>
+              <input type="tel" class="form-control campo" id="telefone" placeholder="(XX) XXXXX-XXXX" minlength="14" maxlength="15" required>
               <label for="floatingInput">Telefone ou Whatsapp</label>
+              <span class="mensagem-erro"></span>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control campo" id="floatingInput" placeholder="" maxlength="8" required>
+              <input type="text" class="form-control campo" id="cep" placeholder="XXXXX-XXX" maxlength="9" required>
               <label for="floatingInput">CEP</label>
+              <span class="mensagem-erro"></span>
             </div>
 
             <div class="endereco-num d-flex flex-column flex-md-row">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control campo-end" id="floatingInput" placeholder="" maxlength="100">
+                <input type="text" class="form-control campo-end" id="endereco" placeholder="" disabled >
                 <label for="floatingInput">Endereço</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="number" class="form-control campo-num" id="floatingInput" placeholder="" maxlength="8">
+                <input type="number" class="form-control campo-num" id="numero" placeholder="" maxlength="8">
                 <label for="floatingInput">Número</label>
               </div>
             </div>
