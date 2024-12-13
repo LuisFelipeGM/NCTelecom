@@ -50,6 +50,32 @@ function Dados(e) {
   };
 }
 
+// MASCARAS
+const telefoneInput = document.getElementById('telefone');
+const cepInput = document.getElementById('cep');
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  validaBotaoEnviar(camposDoFormulario);
+
+  telefoneInput.addEventListener('input', function (event) {
+    let currentValue = telefoneInput.value.replace(/\D/g, '');
+
+    if (currentValue.length <= 10) {
+      telefoneInput.value = maskTelefone(currentValue);
+    } else {
+      telefoneInput.value = maskCelular(currentValue);
+    }
+
+  });
+
+  cepInput.addEventListener('input', function (event) {
+    let currentValue = cepInput.value.replace(/\D/g, '');
+    cepInput.value = maskCep(currentValue);
+  });
+});
+
 // VALIDACAO
 
 function validaTelefone(campo) {
@@ -131,31 +157,7 @@ formulario.addEventListener('submit', function (e) {
   const dados = Dados(e);
   console.log(dados);
   localStorage.setItem("areaDeCobertura", JSON.stringify(dados));
+  alert("Dados Salvos com sucesso!");
 });
 
 
-// MASCARAS
-const telefoneInput = document.getElementById('telefone');
-const cepInput = document.getElementById('cep');
-
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  validaBotaoEnviar(camposDoFormulario);
-
-  telefoneInput.addEventListener('input', function (event) {
-    let currentValue = telefoneInput.value.replace(/\D/g, '');
-
-    if (currentValue.length <= 10) {
-      telefoneInput.value = maskTelefone(currentValue);
-    } else {
-      telefoneInput.value = maskCelular(currentValue);
-    }
-
-  });
-
-  cepInput.addEventListener('input', function (event) {
-    let currentValue = cepInput.value.replace(/\D/g, '');
-    cepInput.value = maskCep(currentValue);
-  });
-});
