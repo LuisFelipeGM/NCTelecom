@@ -1,1 +1,111 @@
 @import url(./base/styles.css);
+.area {
+    background-color: transparent;
+    background-image: linear-gradient(100deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+}
+
+.area-texto {
+    width: 50%;
+    color: var(--cor-branco);
+}
+
+.subtitulo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.texto {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.area form {
+    width: 50%;
+}
+
+.formulario {
+    border-radius: 18px;
+    padding: 3rem;
+    background-color: var(--cor-primaria);
+}
+
+.campo {
+    width: 30rem;
+}
+
+.endereco-num {
+    gap: 1rem;
+}
+
+.campo-end {
+    width: 19rem;
+}
+
+.campo-num {
+    width: 10rem;
+}
+
+.botao-enviar {
+    background-color: var(--cor-secundaria);
+    border-radius: 75px;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-primaria);
+    font-weight: 700;
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+}
+
+.botao-enviar:hover {
+    border-width: 2px;
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .cobertura {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .area-texto {
+        width: 100%;
+    }
+
+    .campo {
+        width: 40rem;
+    }
+
+    .campo-end {
+        width: 31rem;
+    }
+    
+    .campo-num {
+        width: 8rem;
+    }
+
+    .botao-enviar {
+        width: 200%;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .endereco-num {
+        gap: 0rem;
+    }
+
+    .campo {
+        width: 20rem;
+    }
+
+    .campo-end {
+        width: 20rem;
+    }
+    
+    .campo-num {
+        width: 20rem;
+    }
+}

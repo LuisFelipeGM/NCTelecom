@@ -6,16 +6,31 @@
     --cor-primaria: #1D1364;
     --cor-secundaria: #FF9900;
     --cor-tercearia: #0B0E37;
+    --cor-quaternaria: #d62444;
     --cor-hover: #3F4E4F;
     --cor-branco: #ffffff;
+    --cor-preto: #000000;
 
     --fonte-primaria: "Inter", sans-serif;
 }
 
 body {
     background-color: var(--cor-tercearia);
+    padding-top: 7rem;
 }
 
 .negrito {
     font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    body {
+        padding-top: 5.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-top: 5rem;
+    }
 }

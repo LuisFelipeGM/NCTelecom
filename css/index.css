@@ -1,9 +1,5 @@
 @import url(./base/styles.css);
 
-body {
-    padding-top: 7rem;
-}
-
 .carousel-item img.carousel-img {
     height: 100%;
     object-fit: contain;
@@ -67,16 +63,8 @@ body {
     font-size: 1.5rem;
 }
 
-@media (max-width: 1200px) {
-    body {
-        padding-top: 5.9rem;
-    }
-}
-
 @media (max-width: 992px) {
-    body {
-        padding-top: 5rem;
-    }
+    
 
     .botao-contratar {
         font-weight: 500;
