@@ -51,6 +51,12 @@
     width: 20rem;
 }
 
+.mensagem-erro-cep {
+    color: var(--cor-quaternaria);
+    display: block;
+    width: 20rem;
+}
+
 .botao-enviar {
     background-color: var(--cor-secundaria);
     border-radius: 75px;
@@ -119,5 +125,12 @@
     
     .campo-num {
         width: 20rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .formulario {
+        padding: 1rem;
     }
 }
