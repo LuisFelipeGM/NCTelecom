@@ -170,6 +170,7 @@ function buscarPorCEP(cep, campo) {
             validaBotaoEnviar();
           } else {
             mensagemErro.textContent = "Temos cobertura apenas em Carapicuíba";
+            campo.setCustomValidity("Temos cobertura apenas em Carapicuíba");
             endereco.value = '';
             validaBotaoEnviar();
           }
