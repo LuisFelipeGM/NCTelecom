@@ -92,19 +92,6 @@ function validaTelefone(campo) {
   }
 }
 
-function validaCEP(campo) {
-  if(campo.value != "") {
-    let cep = campo.value.replace(/\D/g, '');
-    if (cep.length !== 8) {
-      campo.setCustomValidity("Por favor, preencha um CEP válido.");
-    } else {
-      campo.setCustomValidity("");
-    }
-  } else {
-    campo.setCustomValidity("O campo de CEP não pode estar vazio.");
-  }
-}
-
 function verificaCampo(campo) {
   let mensagem = "";
   campo.setCustomValidity("");
@@ -129,10 +116,10 @@ function verificaCEP(campo) {
   campo.setCustomValidity("");
   validaCEP(campo);
   mensagem = campo.validationMessage;
-
-  const mensagemErro = campo.parentNode.querySelector(".mensagem-erro");
+  
+  const mensagemErro = campo.parentNode.querySelector(".mensagem-erro-cep");
   const validadorDeInput = campo.checkValidity();
-
+  
   if (!validadorDeInput) {
     mensagemErro.textContent = mensagem;
   } else {
@@ -140,12 +127,75 @@ function verificaCEP(campo) {
   }
 }
 
-function validaBotaoEnviar(camposDoFormulario) {
- const campos = Array.from(camposDoFormulario);
- const botaoEnviar = document.querySelector(".botao-enviar");
- const formularioValido = campos.every(campo => campo.checkValidity());
- botaoEnviar.disabled = !formularioValido;
+function validaCEP(campo) {
+  if(campo.value != "") {
+    let cep = campo.value.replace(/\D/g, '');
+    if (cep.length !== 8) {
+      campo.setCustomValidity("Por favor, preencha um CEP válido.");
+    } else {
+      campo.setCustomValidity("");
+      buscarPorCEP(cep, campo);
+    }
+  } else {
+    campo.setCustomValidity("O campo de CEP não pode estar vazio.");
+  }
 }
+
+function buscarPorCEP(cep, campo) {
+
+  const url = `https://viacep.com.br/ws/${cep}/json/`;
+  const mensagemErro = campo.parentNode.querySelector(".mensagem-erro-cep");
+  const endereco = document.querySelector("#endereco");
+
+  if(cep.length === 8){
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Erro ao buscar o CEP.");
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.erro) {
+          console.error("CEP não encontrado.");
+          mensagemErro.textContent = "CEP não encontrado.";
+          campo.setCustomValidity("CEP não encontrado.");
+          endereco.value = '';
+          validaBotaoEnviar();
+        } else {
+          if(data.localidade === "Carapicuíba") {
+            mensagemErro.textContent = "";
+            endereco.value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`
+            validaBotaoEnviar();
+          } else {
+            mensagemErro.textContent = "Temos cobertura apenas em Carapicuíba";
+            validaBotaoEnviar();
+          }
+        }
+      })
+      .catch(error => {
+        console.error("Erro:", error.message);
+        validaBotaoEnviar();
+      });
+
+  }
+
+}
+
+function validaBotaoEnviar() {
+  const campoCep = document.querySelector("#cep");
+  const camposDoFormulario = document.querySelectorAll("[required]");
+  const botaoEnviar = document.querySelector(".botao-enviar");
+
+  // Verifica se todos os campos obrigatórios são válidos e se o campo de CEP não possui erros
+  const formularioValido = Array.from(camposDoFormulario).every(campo => campo.checkValidity());
+  const cepValido = campoCep.checkValidity() && campoCep.validationMessage === ""; // O CEP precisa ser válido e sem mensagem de erro
+
+  botaoEnviar.disabled = !(formularioValido && cepValido); // Habilita o botão se todos os campos e o CEP forem válidos
+}
+
+// EVENTOS NOS BOTÕES
 const todoOsCamposFoms = document.querySelectorAll("[required]")
 const camposDoFormulario = document.querySelectorAll(".forms")
 const formulario = document.querySelector("[data-formulario]");
@@ -153,11 +203,11 @@ const formulario = document.querySelector("[data-formulario]");
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => {
     verificaCampo(campo);
-    validaBotaoEnviar(todoOsCamposFoms);
+    validaBotaoEnviar();
   });
   campo.addEventListener("input", () => {
     validaTelefone(campo);
-    validaBotaoEnviar(todoOsCamposFoms);
+    validaBotaoEnviar();
   })
   campo.addEventListener("invalid", evento => {
     evento.preventDefault();
@@ -167,11 +217,11 @@ camposDoFormulario.forEach((campo) => {
 const campoCep = document.querySelector("#cep");
 campoCep.addEventListener("blur", () => {
   verificaCEP(campoCep);
-  validaBotaoEnviar(todoOsCamposFoms);
+  validaBotaoEnviar();
 });
 campoCep.addEventListener("input", () => {
   validaCEP(campoCep);
-  validaBotaoEnviar(todoOsCamposFoms);
+  validaBotaoEnviar();
 })
 
 
