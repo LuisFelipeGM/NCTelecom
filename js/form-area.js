@@ -20,10 +20,6 @@ const mensagens = {
   telefone: {
     valueMissing: "O campo de telefone não pode estar vazio.",
     customError: 'Por favor, preencha um telefone válido.'
-  },
-  cep: {
-    valueMissing: "O campo de CEP não pode estar vazio.",
-    customError: 'Por favor, preencha um CEP válido.'
   }
 }
 
@@ -97,13 +93,15 @@ function validaTelefone(campo) {
 }
 
 function validaCEP(campo) {
-  if(campo.id === "cep" && campo.value != "") {
+  if(campo.value != "") {
     let cep = campo.value.replace(/\D/g, '');
     if (cep.length !== 8) {
-      campo.setCustomValidity("CEP inválido.");
+      campo.setCustomValidity("Por favor, preencha um CEP válido.");
     } else {
       campo.setCustomValidity("");
     }
+  } else {
+    campo.setCustomValidity("O campo de CEP não pode estar vazio.");
   }
 }
 
@@ -111,12 +109,27 @@ function verificaCampo(campo) {
   let mensagem = "";
   campo.setCustomValidity("");
   validaTelefone(campo);
-  validaCEP(campo);
   tiposDeErro.forEach(erro => {
     if (campo.validity[erro]) {
       mensagem = mensagens[campo.id][erro];
     }
   });
+  const mensagemErro = campo.parentNode.querySelector(".mensagem-erro");
+  const validadorDeInput = campo.checkValidity();
+
+  if (!validadorDeInput) {
+    mensagemErro.textContent = mensagem;
+  } else {
+    mensagemErro.textContent = "";
+  }
+}
+
+function verificaCEP(campo) {
+  let mensagem = "";
+  campo.setCustomValidity("");
+  validaCEP(campo);
+  mensagem = campo.validationMessage;
+
   const mensagemErro = campo.parentNode.querySelector(".mensagem-erro");
   const validadorDeInput = campo.checkValidity();
 
@@ -133,23 +146,34 @@ function validaBotaoEnviar(camposDoFormulario) {
  const formularioValido = campos.every(campo => campo.checkValidity());
  botaoEnviar.disabled = !formularioValido;
 }
-
-const camposDoFormulario = document.querySelectorAll("[required]");
+const todoOsCamposFoms = document.querySelectorAll("[required]")
+const camposDoFormulario = document.querySelectorAll(".forms")
 const formulario = document.querySelector("[data-formulario]");
 
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => {
     verificaCampo(campo);
-    validaBotaoEnviar(camposDoFormulario);
+    validaBotaoEnviar(todoOsCamposFoms);
   });
   campo.addEventListener("input", () => {
-    validaCEP(campo);
-    validaBotaoEnviar(camposDoFormulario);
+    validaTelefone(campo);
+    validaBotaoEnviar(todoOsCamposFoms);
   })
   campo.addEventListener("invalid", evento => {
     evento.preventDefault();
   });
 })
+
+const campoCep = document.querySelector("#cep");
+campoCep.addEventListener("blur", () => {
+  verificaCEP(campoCep);
+  validaBotaoEnviar(todoOsCamposFoms);
+});
+campoCep.addEventListener("input", () => {
+  validaCEP(campoCep);
+  validaBotaoEnviar(todoOsCamposFoms);
+})
+
 
 formulario.addEventListener('submit', function (e) {
   e.preventDefault();
