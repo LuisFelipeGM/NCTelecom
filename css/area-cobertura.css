@@ -1,7 +1,38 @@
 @import url(./base/styles.css);
-.area {
+main {
     background-color: transparent;
-    background-image: linear-gradient(100deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    background-image: linear-gradient(120deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+}
+
+.bairros {
+    color: var(--cor-branco);
+    background-image: url("./../imgs/mapa-carapicuiba.png");
+    background-size: cover;
+}
+
+.fundo {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.titulo {
+    font-weight: 700;
+}
+
+.texto-subtitulo {
+    font-size: 1.25rem;
+}
+
+.bi-geo-alt-fill {
+    color: var(--cor-quaternaria);
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 1.7rem;
 }
 
 .area-texto {
@@ -82,6 +113,11 @@
   }
 
 @media (max-width: 992px) {
+
+    ul li {
+        font-size: 1.5rem;
+    }
+
     .cobertura {
         align-items: center;
         justify-content: center;
@@ -110,6 +146,10 @@
 }
 
 @media (max-width: 767px) {
+
+    .bairros {
+        background-image: url("./../imgs/mapa-carapicuiba-mobile.png");
+    }
 
     .endereco-num {
         gap: 0rem;
