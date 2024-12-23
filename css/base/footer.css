@@ -18,6 +18,8 @@
     font-family: var(--fonte-primaria);
     font-weight: 500;
     color: var(--cor-branco);
+    width: 20rem;
+    max-width: 80%
 }
 
 #embedded-map-display img {
@@ -54,8 +56,9 @@
     }
 
     .mapa {
+        margin-top: 2rem;
         height: 20em;
-        width: 20em;
+        width: 100%;
     }
 }
 
